@@ -1,0 +1,47 @@
+<div class="gap-2 flex flex-col" *ngIf="!isLoading && userDetails && userDetails.id">
+  <div class="bg-base-100 shadow-md py-10 px-5 rounded-md gap-3 flex flex-col">
+    <h2 class="text-lg font-bold">User Details</h2>
+    <p><strong>Name:</strong> {{userDetails.name}}</p>
+    <p><strong>Username:</strong> {{userDetails.username}}</p>
+    <p><strong>Email:</strong> {{userDetails.email}}</p>
+    <p><strong>Phone:</strong> {{userDetails.phone}}</p>
+    <p><strong>Website:</strong> {{userDetails.website}}</p>
+  </div>
+  <div class="bg-base-100 shadow-md py-10 px-5 rounded-md gap-3 flex flex-col">
+    <h2 class="text-lg font-bold">Address Details</h2>
+    <p><strong>Suite:</strong> {{userDetails.address.suite}}</p>
+    <p><strong>Street:</strong> {{userDetails.address.street}}</p>
+    <p><strong>City:</strong> {{userDetails.address.city}}</p>
+    <p><strong>Zipcode:</strong> {{userDetails.address.zipcode}}</p>
+    <p><strong>Geolocation:</strong> {{userDetails.address.geo.lat}}, {{userDetails.address.geo.lng}}</p>
+  </div>
+  <div class="bg-base-100 shadow-md py-10 px-5 rounded-md gap-3 flex flex-col">
+    <h2 class="text-lg font-bold">Company Details</h2>
+    <p><strong>Name:</strong> {{userDetails.company.name}}</p>
+    <p><strong>Catch phrase:</strong> {{userDetails.company.catchPhrase}}</p>
+    <p><strong>Bs:</strong> {{userDetails.company.bs}}</p>
+  </div>
+</div>
+<div class="text-center" *ngIf="!isLoading && !userDetails?.id">
+  <h2 class="text-2xl font-bold">User not found</h2>
+</div>
+<div class="gap-2 flex flex-col" *ngIf="isLoading">
+  <div class="bg-base-100 shadow-md p-10 rounded-md gap-3 flex flex-col">
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full"></div>
+  </div>
+  <div class="bg-base-100 shadow-md p-10 rounded-md gap-3 flex flex-col">
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full"></div>
+  </div>
+  <div class="bg-base-100 shadow-md p-10 rounded-md gap-3 flex flex-col">
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full"></div>
+    <div class="skeleton h-4 w-full"></div>
+  </div>
+</div>

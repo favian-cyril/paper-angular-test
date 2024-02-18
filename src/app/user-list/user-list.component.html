@@ -1,0 +1,32 @@
+<div class="overflow-x-auto">
+  <table class="table table-zebra rounded-md">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Website</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngIf="!isLoading">
+      <tr *ngFor="let user of this.usersList">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td><a href="https://{{user.website}}">{{user.website}}</a></td>
+        <th>
+          <a href="/user/{{user.id}}"><button class="btn btn-sm">details</button></a>
+        </th>
+      </tr>
+    </tbody>
+    <tbody *ngIf="isLoading">
+      <tr>
+        <td colspan="4" class="text-center py-10"><span class="loading loading-spinner loading-lg"></span></td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="usersList.length === 0 && !isLoading">
+      <tr>
+        <td colspan="4" class="text-center py-10 text-lg font-bold">No data</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
